@@ -23,8 +23,8 @@ function Login() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Login</h2>
+    <div className="container">
+      <h2>Iniciar sesión</h2>
       <form onSubmit={handleLogin}>
         <input
           type="email"
@@ -32,15 +32,13 @@ function Login() {
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
-        <br />
         <input
           type="password"
           placeholder="Contraseña"
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
-        <br />
-        <button type="submit">Iniciar sesión</button>
+        <button type="submit">Entrar</button>
       </form>
       <p>
         ¿No tienes cuenta? <Link to="/registro">Regístrate aquí</Link>

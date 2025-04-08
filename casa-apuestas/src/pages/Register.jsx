@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +14,7 @@ function Register() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div className="container">
       <h2>Registro</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -22,16 +23,17 @@ function Register() {
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
-        <br />
         <input
           type="password"
           placeholder="Contraseña"
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
-        <br />
         <button type="submit">Registrarse</button>
       </form>
+      <p>
+        ¿Ya tienes cuenta? <a href="/">Inicia sesión</a>
+      </p>
     </div>
   );
 }

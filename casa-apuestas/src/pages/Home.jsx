@@ -1,12 +1,22 @@
 
+import { useNavigate } from "react-router-dom";
+
 function Home() {
-    return (
-      <div style={{ padding: 20 }}>
-        <h2>Bienvenido a la casa de apuestas 🎲</h2>
-        <p>Aquí irá el menú de juegos, saldo, historial, etc.</p>
-      </div>
-    );
-  }
-  
-  export default Home;
-  
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
+
+  return (
+    <div className="container">
+      <h2>Bienvenido a la Casa de Apuestas 🎰</h2>
+      <p>Desde aquí podrás acceder a tus juegos y consultar tu saldo.</p>
+
+      <button onClick={handleLogout}>Cerrar sesión</button>
+    </div>
+  );
+}
+
+export default Home;
